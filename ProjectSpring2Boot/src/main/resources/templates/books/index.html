@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<div th:each="book: ${books}">
+    <a th:href="@{/books/book/show/{id}(id=${book.getBookId()})}"
+       th:text="${book.title + ', ' + book.author + ', ' + book.dateCreation}">Book</a>
+</div>
+<br/>
+
+<a href="/books/book/new">Создать новую книгу</a>
+</body>
+</html>
